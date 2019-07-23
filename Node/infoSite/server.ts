@@ -10,22 +10,22 @@ function displayPageContent(fileName: string, response: http.ServerResponse, sta
   });
 }
 
-http
-  .createServer((req, res) => {
-    const path = req.url;
+const server = http.createServer((req, res) => {
+  const path = req.url;
 
-    switch (path) {
-      case '/':
-        displayPageContent('index.html', res, 200);
-        break;
-      case '/contact-me':
-        displayPageContent('contact-me.html', res, 200);
-        break;
-      case '/about':
-        displayPageContent('about.html', res, 200);
-        break;
-      default:
-        displayPageContent('404.html', res, 404);
-    }
-  })
-  .listen(4000);
+  switch (path) {
+    case '/':
+      displayPageContent('index.html', res, 200);
+      break;
+    case '/contact-me':
+      displayPageContent('contact-me.html', res, 200);
+      break;
+    case '/about':
+      displayPageContent('about.html', res, 200);
+      break;
+    default:
+      displayPageContent('404.html', res, 404);
+  }
+});
+
+server.listen(4000);

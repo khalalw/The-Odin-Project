@@ -11,8 +11,7 @@ function displayPageContent(fileName, response, statusCode) {
         response.end();
     });
 }
-http
-    .createServer(function (req, res) {
+var server = http.createServer(function (req, res) {
     var path = req.url;
     switch (path) {
         case '/':
@@ -27,5 +26,5 @@ http
         default:
             displayPageContent('404.html', res, 404);
     }
-})
-    .listen(4000);
+});
+server.listen(4000);
