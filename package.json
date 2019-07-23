@@ -1,0 +1,25 @@
+{
+  "name": "odin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "express": "^4.17.1",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalalw/The-Odin-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khalalw/The-Odin-Project/issues"
+  },
+  "homepage": "https://github.com/khalalw/The-Odin-Project#readme"
+}

@@ -1,19 +1,20 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var http = require("http");
-var fs = require("fs");
-function displayPageContent(fileName, response, statusCode) {
-    fs.readFile(fileName, function (err, data) {
-        if (err)
-            throw err;
-        response.writeHead(statusCode, { 'Content-Type': 'text/html' });
+import http = require("http");
+import fs = require("fs");
+
+function displayPageContent(fileName: string, response: http.ServerResponse, statusCode: number) {
+    fs.readFile(fileName, (err, data) => {
+        if (err) throw err;
+        response.writeHead(statusCode, {'Content-Type': 'text/html'});
         response.write(data);
         response.end();
     });
 }
+
+
 http
-    .createServer(function (req, res) {
-    var path = req.url;
+  .createServer((req, res) => {
+    const path = req.url;
+
     switch (path) {
         case '/':
             displayPageContent('index.html', res, 200);
@@ -27,5 +28,5 @@ http
         default:
             displayPageContent('404.html', res, 404);
     }
-})
-    .listen(4000);
+  })
+  .listen(4000);
