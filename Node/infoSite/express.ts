@@ -5,8 +5,8 @@ import fs = require('fs');
 
 const app = express();
 
-function displayPageContent(fileName: string, res: express.Response, statusCode: number) {
-  fs.readFile(fileName, (err, data) => {
+function displayPageContent(filePath: string, res: express.Response, statusCode: number) {
+  fs.readFile(filePath, (err, data) => {
     res
       .header('Content-Type', 'text/html')
       .status(statusCode)

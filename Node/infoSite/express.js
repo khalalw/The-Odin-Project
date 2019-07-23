@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var fs = require("fs");
 var app = express();
-function displayPageContent(fileName, res, statusCode) {
-    fs.readFile(fileName, function (err, data) {
+function displayPageContent(filePath, res, statusCode) {
+    fs.readFile(filePath, function (err, data) {
         res
             .header('Content-Type', 'text/html')
             .status(statusCode)
